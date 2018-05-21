@@ -1,5 +1,5 @@
 @if (Session::has('success'))
-    <div class="alert alert-success" id="notfication" role="alert">
+    <div class="alert alert-success text-center" id="notfication" role="alert">
       <i class="fa fa-times-circle-o pull-right" id="close"></i>
       <strong>Success:</strong><br> {{ Session::get('success') }}
     </div>
@@ -7,7 +7,7 @@
 @endif
 
 @if (Session::has('permission') )
-    <div class="alert alert-warning" role="alert" id="notfication">
+    <div class="alert alert-warning text-center" role="alert" id="notfication">
       <i class="fa fa-times-circle-o pull-right" id="close"></i>
       <strong>Warning:</strong><br> {{ Session::get('permission') }}
     </div>

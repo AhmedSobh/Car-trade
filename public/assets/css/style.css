@@ -1013,12 +1013,12 @@ border-radius: 0;
 .flat .plan.featured:hover li.plan-name, .flat .plan:hover li.plan-name, .flat .plan.featured.plan-name {
 	background: #6D4DC8 !important;
 }
-.btn {
+/* .btn {
 	background: #0D91D2;
 	color: #fff;
 	border-radius: 0;
 	padding: 12px 25px;
-}
+} */
 .footer2 a {
 	padding: 4px 8px;
 }
@@ -1261,4 +1261,24 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+.dashboard{
+	margin-top: 20px;
+	margin-left: 300px
+}
 /*sidebar end*/
+
+.top20{
+	margin-top: 20px
+}
+
+.left10{
+	margin-left: 10px
+}
+.all5{
+	margin:5px;
+}
+.panel-primary{
+	border: 1px solid #a0a0a0;
+	border-top: 0;
+}
