@@ -7,10 +7,10 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav pull-right mainNav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="courses.html">Cars</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li class="active"><a href="{{url('/')}}">Home</a></li>
+        {{-- <li><a href="#">About</a></li> --}}
+        <li><a href="{{route('cars.index')}}">Cars</a></li>
+        {{-- <li><a href="contact.html">Contact</a></li> --}}
         @guest
           <li><a href="{{ route('login') }}">Login</a></li>
           <li><a href="{{ route('register') }}">Sign up</a></li>
@@ -20,16 +20,21 @@
                   {{ Auth::user()->name }} <span class="caret"></span>
               </a>
 
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
+                <a href="{{ route('dashboard') }}" style="margin-top:10px; margin-left:20px"><b>Dashboard</b></a><br>
+                @if (Auth::user()->role==1)
+                  <a href="{{ route('cars.create') }}" style="margin-top:10px; margin-left:20px"><b>Add Car</b></a><br>
+                @endif
                   <a class="dropdown-item" href="{{ route('logout') }}"
                      onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">
-                      {{ __('Logout') }}
+                                   document.getElementById('logout-form').submit();" style="margin-top:10px; margin-left:20px">
+                      <b>{{ __('Logout') }}</b>
                   </a>
 
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf
                   </form>
+
               </div>
           </li>
         @endguest

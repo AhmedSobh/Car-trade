@@ -32,6 +32,8 @@
 
   @yield('content')
 
+  <br>
+  <hr>
   <footer id="footer">
   <div class="footer2">
     <div class="container">
@@ -88,6 +90,5 @@
 	</script>
   @yield('scripts')
   <!-- Custom Js -->
-  <script src="{{asset('js/backend.js')}}"></script>
 </body>
 </html>

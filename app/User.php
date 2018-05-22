@@ -36,4 +36,14 @@ class User extends Authenticatable
     {
       return $this->belongsToMany('App\Car','car_employee');
     }
+
+    public function makes()
+    {
+      return $this->hasMany('App\Make','user_id');
+    }
+
+    public function tickets()
+    {
+      return $this->hasMany('App\Ticket','user_id');
+    }
 }

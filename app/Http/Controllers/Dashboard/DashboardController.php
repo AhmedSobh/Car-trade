@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Car;
 use Session;
 
 class DashboardController extends Controller
@@ -20,7 +21,9 @@ class DashboardController extends Controller
       $admins     = count(User::where('role',1)->get());
       $employees  = count(User::where('role',2)->get());
       $customers  = count(User::where('role',3)->get());
+      $cars       = count(Car::all());
       return view('dashboard.index')
+        ->withCars($cars)
         ->withUsers($users)
         ->withAdmins($admins)
         ->withEmployees($employees)

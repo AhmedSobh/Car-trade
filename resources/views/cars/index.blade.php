@@ -1,27 +1,28 @@
 @extends('layouts.app')
 
-@section('title','Dashboard')
+@section('title','Cars')
 
 @section('content')
-  @include('partials._sidebar')
-  <div class="dashboard container">
+  <div class="container top top20">
     <div class="row">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">All Cars</h>
-          @if (Auth::user()->role==1)
-            <a href="{{ route('cars.create') }}" class=" btn-xs pull-right">Add Car</a>
-          @endif
-        </div>
-        <div class="panel-body">
-          @foreach ($cars as $car)
-            <div class="col-md-3">
-              <img src="{{asset('assets/img/'.$car->image)}}" alt="{{$car->name}}">
-              <a href="{{route('cars.show', $car->id)}}">{{$car->name}}</a>
-            </div>
-          @endforeach
+          <div class="">
+            <h1 style="width:150px;">All Cars:</h1><br>
+
           </div>
-        </div>
+            @foreach ($cars as $car)
+              <div class="col-sm-3 cars">
+                <a href="{{route('cars.show', $car->id)}}" class="thumbnail text-center">
+                  <img src="{{asset('assets/'.$car->image)}}" style="height:120px" alt="{{$car->name}}">
+                  <br>
+                  <b>{{$car->name}}</b>
+                  <br>
+                  <b>{{$car->price}}</b>
+                </a>
+              </div>
+            @endforeach
+            <div class="text-center">
+              {{$cars->links()}}
+            </div>
     </div>
   </div>
 @endsection

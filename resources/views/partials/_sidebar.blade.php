@@ -1,5 +1,5 @@
 <div class="nav-side-menu">
-    <div class="brand">Brand Logo</div>
+    <div class="brand">Car Trade</div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
         <div class="menu-list">
@@ -31,13 +31,33 @@
                   @endforeach
                 </ul>
 
-
-
                  <li>
-                  <a href="#">
-                  <i class="fa fa-user fa-lg"></i> Profile
+                  <a href="{{route('cars.request')}}">
+                  <i class="fa fa-plus fa-lg"></i> Make Request
                   </a>
                   </li>
+
+                  @if (Auth::user()->role!=3)
+                    <li>
+                     <a href="{{route('cars.request.list')}}">
+                     <i class="fa fa-list fa-lg"></i> Show Requests
+                     </a>
+                     </li>
+                  @endif
+
+                  <li>
+                   <a href="{{route('cars.ticket')}}">
+                   <i class="fa fa-ticket fa-lg"></i> Make Ticket
+                   </a>
+                   </li>
+
+                   @if (Auth::user()->role!=3)
+                     <li>
+                      <a href="{{route('cars.ticket.list')}}">
+                      <i class="fa fa-list fa-lg"></i> Show Tickets
+                      </a>
+                      </li>
+                   @endif
             </ul>
      </div>
 </div>

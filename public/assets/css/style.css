@@ -1264,7 +1264,8 @@ body {
 
 .dashboard{
 	margin-top: 20px;
-	margin-left: 300px
+	margin-left: 300px;
+	width: 75%;
 }
 /*sidebar end*/
 
@@ -1281,4 +1282,20 @@ body {
 .panel-primary{
 	border: 1px solid #a0a0a0;
 	border-top: 0;
+}
+
+.btn-cz{
+	border: 1px solid #31b0d5;
+	background-color: #31b0d5;
+	color: white;
+}
+
+.btn-cz:hover{
+	color: white;
+}
+
+.cars{
+	border: 1px solid #E6E6E6;
+	border-radius: 10%;
+	margin: 5px 20px;
 }

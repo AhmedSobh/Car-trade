@@ -5,7 +5,7 @@ Any help: webthemez@gmail.com
 Licence: Creative Commons Attribution 3.0** - http://creativecommons.org/licenses/by/3.0/
 */
 jQuery(document).ready(function ($) {
-    
+
     //Set the carousel options
     $('#quote-carousel').carousel({
         pause: true,
@@ -57,4 +57,32 @@ jQuery(document).ready(function ($) {
             });
         });
     }
+
+    //fadout of notfication message
+      $("#notfication").delay(7000).fadeOut(3000);
+
+    //fadout of warning message
+      // $("#warning").delay(80000).fadeOut(3000);
+
+
+    // close the notfication message
+    $('#close').click(function(){
+      $('#notfication, #warning').hide();
+    });
+
+    //close icone change on hover notification
+    $("#close").hover(function () {
+          $(this).removeClass("fa-times-circle-o").addClass("fa-times-circle");
+      }, function () {
+          $(this).removeClass("fa-times-circle").addClass("fa-times-circle-o");
+    });
+
+    //delete button
+    $('#delete').on('click',function(e) {
+      // alert('started');
+      e.preventDefault();
+      // console.log("prevented");
+      $('#delete-form').submit();
+      // console.log("prevented");
+    });
 });

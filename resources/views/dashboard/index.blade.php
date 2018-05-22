@@ -28,7 +28,7 @@
           </div>
 
           <div class="col-md-3 well text-center all5">
-            <br>Cars
+            {{$cars}}<br>Cars
           </div>
         </div>
       </div>
