@@ -37,3 +37,4 @@ Route::get('changeApprove/{make}/state/{state}','Dashboard\CarController@change'
 Route::get('cars/ticket','Dashboard\CarController@ticket')->name('cars.ticket');
 Route::post('cars/ticket','Dashboard\CarController@makeTicket')->name('cars.make.ticket');
 Route::get('cars/tickets','Dashboard\CarController@listTickets')->name('cars.ticket.list');
+Route::get('cars/{buy}/buy','Dashboard\CarController@buy')->name('cars.buy');

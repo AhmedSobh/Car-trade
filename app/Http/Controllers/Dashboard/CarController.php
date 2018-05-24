@@ -195,4 +195,14 @@ class CarController extends Controller
       return view('cars.listTickets')
         ->withTickets($tickets);
     }
+
+    public function buy($car)
+    {
+      $make=new Make();
+      $make->type='buy';
+      $make->user_id  = Auth::user()->id;
+      $make->car_id   = $car;
+      $make->save();
+      return redirect()->route('dashboard');
+    }
 }

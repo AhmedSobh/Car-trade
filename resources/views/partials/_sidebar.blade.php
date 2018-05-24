@@ -31,13 +31,15 @@
                   @endforeach
                 </ul>
 
-                 <li>
-                  <a href="{{route('cars.request')}}">
-                  <i class="fa fa-plus fa-lg"></i> Make Request
-                  </a>
-                  </li>
+                 @if (Auth::user()->role==3)
+                   <li>
+                    <a href="{{route('cars.request')}}">
+                    <i class="fa fa-plus fa-lg"></i> Make Request
+                    </a>
+                    </li>
+                 @endif
 
-                  @if (Auth::user()->role!=3)
+                  @if (Auth::user()->role==2)
                     <li>
                      <a href="{{route('cars.request.list')}}">
                      <i class="fa fa-list fa-lg"></i> Show Requests
@@ -45,13 +47,15 @@
                      </li>
                   @endif
 
-                  <li>
-                   <a href="{{route('cars.ticket')}}">
-                   <i class="fa fa-ticket fa-lg"></i> Make Ticket
-                   </a>
-                   </li>
+                  @if (Auth::user()->role==3)
+                    <li>
+                     <a href="{{route('cars.ticket')}}">
+                     <i class="fa fa-ticket fa-lg"></i> Make Ticket
+                     </a>
+                     </li>
+                  @endif
 
-                   @if (Auth::user()->role!=3)
+                   @if (Auth::user()->role==2)
                      <li>
                       <a href="{{route('cars.ticket.list')}}">
                       <i class="fa fa-list fa-lg"></i> Show Tickets

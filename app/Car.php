@@ -16,4 +16,8 @@ class Car extends Model
       return $this->belongsToMany('App\User','car_employee');
     }
 
+    public function makes()
+    {
+      return $this->hasMany('App\Make','car_id');
+    }
 }

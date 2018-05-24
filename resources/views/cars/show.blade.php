@@ -57,6 +57,11 @@
         					<p class="col-md-5">{{$car->created_at}}</p>
               </div>
               <div class="row">
+                @if (Auth::user()->role==3)
+                  <div class="col-md-12">
+                    <a href="{{route('cars.buy', $car)}}" class="btn btn-block btn-primary">Buy</a>
+                  </div>
+                @endif
                 @if (Auth::user()->role!=3)
                   <div class="col-md-6">
                     <a href="{{route('cars.edit',$car)}}" class="btn btn-warning mt-ladda-btn ladda-button btn-circle">Edit</a>

@@ -18,6 +18,7 @@
                 <th>Customer Phone</th>
                 <th>Customer Address</th>
                 <th>Type</th>
+                <th>Car name(Only in Buy)</th>
                 <th>Created At</th>
                 <th>Approve state</th>
                 <th>Action</th>
@@ -31,6 +32,7 @@
                       <td>{{ $make->customer->phone}}</td>
                       <td>{{ $make->customer->address}}</td>
                       <td>{{ $make->type}}</td>
+                      <td>{{ $make->car['name']}}</td>
                       <td>{{ $make->created_at  }}</td>
                       <td>{{$make->approve}}</td>
                       <td>
